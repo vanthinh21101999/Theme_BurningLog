@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="mage/gallery/gallery.css"/>
+        
+    </head>
+    <update handle="catalog_product_opengraph" />
+    <update handle="page_calendar"/>
+    <body>
+        <referenceContainer name="product.info.stock.sku" remove="true"/> 
+        <referenceBlock name="product.info.review" remove="true" />
+        <referenceContainer name="product.info.social" remove="true" />
+        <referenceBlock name="product.attributes" remove="true"/>
+        <referenceBlock name="reviews.tab" remove="true"/>
+        
+
+       
+
+        <referenceBlock name="product.info.details">
+            
+            <referenceBlock class="Magento\Catalog\Block\Product\View\Description" name="product.info.description" template="Magento_Catalog::product/view/attribute.phtml" >
+                <arguments>
+                    <argument name="title" translate="true" xsi:type="string">Description</argument>
+                    <argument name="sort_order" xsi:type="string">5</argument>
+                </arguments>
+            </referenceBlock>
+
+            <block class="Magento\Catalog\Block\Product\View" name="warranty.tab" as="warranty" template="Magento_Catalog::product/tabs/warranty.phtml" group="detailed_info">
+                <arguments>
+                    <argument translate="true" name="title" xsi:type="string">Care &amp; Warranty</argument>
+                    <argument name="sort_order" xsi:type="string">20</argument>
+                </arguments>
+            </block>
+
+            <block class="Magento\Catalog\Block\Product\View" name="shipping.tab" as="shipping" template="Magento_Catalog::product/tabs/shipping.phtml" group="detailed_info">
+                <arguments>
+                    <argument translate="true" name="title" xsi:type="string">Shipping &amp; Delivery</argument>
+                    <argument name="sort_order" xsi:type="string">30</argument>
+                </arguments>
+            </block>
+
+            <block class="Magento\Catalog\Block\Product\View" name="installation.tab" as="installation" template="Magento_Catalog::product/tabs/installation.phtml" group="detailed_info">
+                <arguments>
+                    <argument translate="true" name="title" xsi:type="string">Installation Requirements</argument>
+                    <argument name="sort_order" xsi:type="string">40</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+            
+        
+    </body>
+</page>
+
+
+

@@ -1,0 +1,90 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+    //  Using buttons mixins
+    button,
+    a.action.primary {
+        .lib-css(border-radius, @button__border-radius);
+    }
+
+    button {
+        &:not(.primary) {
+            .lib-css(box-shadow, @button__shadow);
+
+            &:active {
+                .lib-css(box-shadow, @button__shadow-active);
+            }
+        }
+    }
+
+    body {
+        &:not(._keyfocus) {
+            button {
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+
+    a.action.primary {
+        .lib-link-as-button();
+    }
+
+    .action.primary {
+        .lib-button-primary();
+    }
+    .action.secondary{
+        .lib-button-revert-secondary-color();
+        border-radius: 0;
+        position: relative;
+        padding: 10px 30px;
+        font-family: "Roboto-Bold";
+        text-transform: uppercase;
+
+        &::after {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content    : "\f054";
+            position   : absolute;
+            right      : 7%;
+            top        : 50%;
+            transform  : translateY(-50%);
+        }
+    }
+    
+}
+// button + & -
+.action-button {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    margin-right: -4px;
+    margin-left: -4px;
+}
+
+// dropdown
+.example-dropdown-2 {
+    .lib-dropdown();
+}
+
+// button block css
+.action.primary.toview{
+    .lib-css(height,50px);
+    .lib-css(width,250px);
+    .lib-css(color,@color-white);
+    .lib-css(background-color,@color-grey1);
+    .lib-css(border, 2px solid @color-white);
+    text-transform: uppercase;
+    &:hover{
+        .lib-css(background-color,@color-gray-darken7);
+    }
+}

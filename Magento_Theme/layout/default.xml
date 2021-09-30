@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="default_head_blocks"/>
+    <body>      
+   
+        
+        
+        <referenceBlock name="register-link" remove="true" /> 
+        <referenceBlock name="wish-list-link" remove="true" />   
+        <referenceBlock name="catalog.compare.link" remove="true" />  
+        <referenceBlock name="my-account-link" remove="true" />        
+        <referenceBlock name="authorization-link-login" remove="true" />
+        <referenceBlock name="header" remove="true"/>
+        <referenceBlock name="authorization-link" remove="true" />   
+        <referenceBlock name="footer_links" remove="true"/>
+        <move element="form.subscribe" destination="newsletter-wrapper" after="newsletter"/>
+        <referenceBlock name="copyright" remove="true"/>
+        <move element="top" destination="footer-container" before="footer"/>
+        <move element="footer-top" destination="footer-container" before="top"/>
+
+        
+        <!-- <referenceContainer name="content">
+
+        <block class="Magento\Framework\View\Element\Template" name="catalog.block" template="Magento_Theme::file.phtml" after="-"/>
+        </referenceContainer> -->
+        <referenceContainer name="header.panel" > 
+
+            <block class="Magento\Framework\View\Element\Template" name="header-top-left" before="-" template="Magento_Theme::header-top-left.phtml" />
+            <block class="Magento\Framework\View\Element\Template" name="header-top-middle" after="header-top-left" template="Magento_Theme::header-top-middle.phtml" />
+            <block class="Magento\Framework\View\Element\Template" name="header-top-right" after="-" template="Magento_Theme::header-top-right.phtml" />
+
+
+            <block class="Magento\Framework\View\Element\Template" name="header-top-left-mobile" before="-" template="Magento_Theme::header-top-left-mobile.phtml" />
+            <block class="Magento\Framework\View\Element\Template" name="header-top-right-mobile" after="-" template="Magento_Theme::header-top-right-mobile.phtml" />
+        </referenceContainer>
+
+
+
+        <referenceContainer name="footer">
+                <container name="middle" htmlTag="div" after="top" htmlClass="middle">
+                    <block class="Magento\Framework\View\Element\Template" name="categ" before="-" template="Magento_Theme::footer_middle.phtml"/>
+                <container name="newsletter-wrapper" htmlTag="div" after="our-policies" htmlClass="newsletter-wrapper">
+                    <block class="Magento\Framework\View\Element\Template" name="newsletter" before="-" template="Magento_Theme::newsletter.phtml"/>
+                    <block class="Magento\Framework\View\Element\Template" name="newsletter.icons" after="-" template="Magento_Theme::newsletter-icons.phtml"/>
+                </container>
+                </container>
+                <container name="custom-copyright" htmlTag="div" after="middle" htmlClass="custom-copyright">
+                    <block class="Magento\Framework\View\Element\Template" name="copyright-text" before="-" template="Magento_Theme::copyright-text.phtml"/>
+                    <block class="Magento\Framework\View\Element\Template" name="copyright-payments" after="copyright-text" template="Magento_Theme::copyright-payments.phtml"/> 
+                </container>
+        </referenceContainer>
+
+
+                <container name="top" htmlTag="div" after="footer-banner" htmlClass="top content">
+                    <container name="top-contents" htmlTag="div" htmlClass="top-contents">
+                    <block class="Magento\Framework\View\Element\Template" name="footer-banner" after="footer-top" template="Magento_Theme::footer-banner.phtml"/>
+                    <block class="Magento\Framework\View\Element\Template" name="footer-icon" after="footer-icon-after-banner" template="Magento_Theme::footer-icon-after-banner.phtml"/>
+                    </container>
+                </container>
+
+
+                <container name="footer-top" as="footer-top" label="Inside Page Footer" before="-" htmlTag="div" htmlClass="footer-top">
+                        <block class="Magento\Framework\View\Element\Template" name="footer-top-left" before="-" template="Magento_Theme::footer-top-left.phtml"/>
+                        <block class="Magento\Framework\View\Element\Template" name="footer-top-middle" after="footer-top" template="Magento_Theme::footer-top-middle.phtml"/>
+                        <block class="Magento\Framework\View\Element\Template" name="footer-top-right" after="-" template="Magento_Theme::footer-top-right.phtml"/>
+                </container>
+        </body>
+</page>
+
+
+                
+                

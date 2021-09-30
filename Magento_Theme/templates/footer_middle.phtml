@@ -1,0 +1,94 @@
+<div class="footer-link-middle">
+<?php
+
+echo $block->getLayout()
+
+           ->createBlock('Magento\Cms\Block\Block')
+
+           ->setBlockId('footer-middle-cate')
+
+           ->toHtml();
+
+?>
+
+</div>
+
+<div class="footer-link-middle-why-log">
+<?php
+
+echo $block->getLayout()
+
+           ->createBlock('Magento\Cms\Block\Block')
+
+           ->setBlockId('why-burning-blog')
+
+           ->toHtml();
+
+?>
+
+</div>
+
+<div class="footer-link-middle-our">
+<?php
+
+echo $block->getLayout()
+
+           ->createBlock('Magento\Cms\Block\Block')
+
+           ->setBlockId('footer-our-policies')
+
+           ->toHtml();
+
+?>
+
+</div>
+
+<script>
+require(['jquery','accordion'], function ($)
+ {
+    if ($(window).width() < 767) {
+      $(".footer-link-middle-why-log").accordion({
+         "openedState": "active",
+         "collapsible": true,
+         "active": [2],
+         "multipleCollapsible": true,
+         "animate":{
+            timing:"ease-out",
+            duration:"500"
+         }
+      });
+
+      $(".footer-link-middle-our").accordion({
+         "openedState": "active",
+         "collapsible": true,
+         "active": [2],
+         "multipleCollapsible": true,
+         "animate":{
+            timing:"ease-out",
+            duration:"500"
+         }
+      });
+
+      $(".footer-link-middle").accordion({
+         "openedState": "active",
+         "collapsible": true,
+         "active": [2],
+         "multipleCollapsible": true,
+         "animate":{
+            timing:"ease-out",
+            duration:"500"
+         }
+      });
+
+    }
+
+ });
+</script>
+
+<!-- <script>
+    require([
+        'jquery',
+        'accordion'], function ($) {
+        $(".footer-content-middle").accordion({"openedState":"active","active":false});
+    });
+</script> -->

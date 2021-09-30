@@ -1,0 +1,94 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Luma theme overrides
+//  _____________________________________________
+
+//  Theme file should contain declarations (overrides) ONLY OF EXISTING variables
+//  Otherwise this theme won't be available for parent nesting
+//  All new variables should be placed in local theme lib or local theme files
+
+// Typograpy
+//
+// fonts
+//
+@font-lora-bold: "Lora-Bold";
+@font-lora-regular: "Lora-Regular";
+@font-roboto-bold: "Roboto-Bold";
+@font-roboto-regular: "Roboto-Regular";
+@font-market-regular: "market-regular";
+//
+//  Buttons
+//  ---------------------------------------------
+
+@button__font-weight: @font-weight__semibold;
+
+//  Default = secondary button
+@button__background: @color-gray-darken0;
+@button__border: 1px solid @border-color__base;
+@button__hover__color: @button__color;
+@button__hover__background: darken(@button__background, 5%);
+@button__active__background: @color-gray-darken1;
+
+//  Primary button
+@button-primary__hover__color: @color-white;
+@button-primary__active__background: @link__hover__color;
+@button-primary__active__border: 1px solid @link__hover__color;
+@button-primary__active__color: @color-white;
+
+//  Button with icon
+@button-icon__line-height: @icon-font__line-height;
+
+
+// button all
+@button__border-radius: 0;
+//button standard and hover 
+
+@button-primary__color: #3b3b3d;
+@button-primary__background: #fff;
+@button-primary__border: 1px solid #3b3b3e;
+
+
+@button-primary__width: 180px;
+@button-primary__line-height: 33px;
+@button-primary__font-size: 15px;
+@button-primary__hover__color: #fff;
+@button-primary__hover__background: #3b3b3e;
+@button-primary__hover__border: 1px solid #3b3b3e;
+
+
+
+//2nd buttons
+@button__background               : #2d2d2f;
+@button__color                    : #ffffff;
+@button__border                   : 2px solid #ffffff;
+
+//
+//  Footer
+//  ---------------------------------------------
+
+@copyright__background-color: @color-gray-middle4;
+
+
+
+
+// Message
+@message__border-width: 1px;
+@message__font-size: 15px;
+@message__border-style: solid;
+
+
+@message-success-icon: false;
+@message-success__color: @color-dark-green1;
+@message-success__background: @color-white;
+@message-success__border-color: @color-dark-green1;
+
+
+@message-error-icon: false;
+@message-error__color: @color-red9;
+@message-error__background: @color-white;
+@message-error__border-color: @color-red9;
+
