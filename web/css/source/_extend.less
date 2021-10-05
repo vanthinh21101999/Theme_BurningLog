@@ -111,6 +111,7 @@
         display: flex;
         color: #2d2d2e;
         height: 35px;
+
     }
     .header-top {
         &-left-mobile {
@@ -189,6 +190,7 @@
     // navigation
     .nav-sections-item-content {
         background: @color-white;
+
     }
     .navigation{
         background: @color-white;
@@ -229,6 +231,8 @@
 //       
 .page-footer {
     background: #fff;
+    border-top: 1px solid #ddd;
+    padding-top: 50px;
 }
 .contents {
    box-sizing   : border-box;
@@ -330,16 +334,12 @@
     .contents();
     border-bottom: 1px solid #dddddd;
 
-    .footer-link-middle {
-        width: 28%;
-        &-why-log {
-            margin-left: 8%;
-            width: 20%;
-    }
-    }
-    .footer-link-middle-our, 
+    .footer-link-middle,
+    .footer-link-middle-why-log,
+    .footer-link-middle-our,
     .newsletter-wrapper {
-        margin-left: 8%;
+        width: 25%;
+        
     }
     
 
@@ -350,7 +350,20 @@
         font-weight   : 400;
         font-family   : "Lora-Bold";
         text-transform: capitalize;
+        
     }
+    .footer-middle-titles-newletter {
+        font-size     : 18px;
+        line-height   : 20px;
+        color         : #000000;
+        font-weight   : 400;
+        font-family   : "Lora-Bold";
+        text-transform: capitalize;
+    }
+    .footer-link-newsletter {
+        
+    }
+   
 
     ul {
         padding: 0;
@@ -375,8 +388,7 @@
     height: 40px;
     &-icons {
             display: flex; 
-            margin-top: 60px;
-            margin-left: -10px;
+            
             
             a {
                 
@@ -426,6 +438,7 @@
 
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    
     .header.panel {
         height         : 36px;
         display        : flex;
@@ -694,21 +707,45 @@
             display       : block;
             height        : 53px;
             border-top    : solid 1px #dddddd;
+            border-bottom : 1px solid #ddd;
             box-sizing    : border-box;
             padding       : 16px 0;
             position: relative;
-
             &:after {
-                font-size     : 16px;
-                line-height   : 25px;
-                color         : #6b5a5a;
-                content       : '\f067';
-                font-family   : "Font Awesome 5 Free";
-                margin        : 0 0 0 8px;
-                font-weight   : 900;
-                float         : right;
-            }
+                content: '\002B';
+                color: #777;
+                font-weight: bold;
+                float: right;
+                margin-left: 5px;
+              }
+        
         } 
+        .active:after {
+            content: "\2212";
+        }
+        .panel {
+            padding: 0;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+          }
+
+        .footer-middle-titles-newletter {
+            margin: 20px 0;
+            font-size     : 18px;
+            line-height   : 20px;
+            color         : #000000;
+            font-weight   : 400;
+            font-family   : "Lora";
+            text-transform: capitalize;
+            display       : block;
+            height        : 53px;
+            
+            box-sizing    : border-box;
+            padding       : 16px 0;
+            position: relative;
+        }
        
         ul {
             padding: 0;
@@ -759,9 +796,7 @@
 
 @media only screen and (max-width: 767px) {
     .block.newsletter input {
-        font-size: 12px;
-        padding-left: 10px;
-        margin-left: 100px;
+        font-size: 14px;
         width: 100%;
     }
 }
@@ -772,4 +807,11 @@
         margin-left: 120px;
         }
     }
+}
+@media only screen and (min-width: 768px) and (max-width: 1230px) {
+
+   .header-top-middle {
+       display: none;
+   }
+   
 }

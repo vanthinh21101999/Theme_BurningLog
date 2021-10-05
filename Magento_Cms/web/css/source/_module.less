@@ -155,26 +155,28 @@
     
 }
 .slick-banner {
-    padding   : 0;
-    display   : flex;
+    padding: 0;
+    display: flex;
     list-style: none;
     margin-top: 20px;
     text-align: center;
+    justify-content: space-between;
+    flex-direction: row;
     .slick-banner-1, .slick-banner-2, .slick-banner-3 {
 
-            margin-right: 20px;
-            width           : 400px;
-            margin-bottom   : 0;
+        max-width: 32.2%;
+        margin-bottom: 20px;
+        background: #eee;
 
             img {
-                width: 400px;
-                height: 360px;
+                width: 100%;
             }
 
             &:last-child {
                 margin-right: 0;
             }
-
+        .text-title {
+            padding: 20px 0;
             .text {
                 
                 font-size       : 24px;
@@ -185,39 +187,40 @@
                 display         : grid;
                 background-color: #eeeeee;
                 box-sizing      : border-box;
-                padding         : 38px 30px;
-                height          : 193px;
-
-                &-title {
+                justify-content : center;
+                padding: 20px;
+            }
+            .title {
                     font-size       : 14px;
                     line-height     : 20px;
+                    padding: 0 20px;
                     color           : #333333;
                     font-weight     : 400;
-                    font-family     : "Roboto-Bold";
-                    text-align      : center;
+                    font-family     : "Roboto-Regular";
+                    display: inline-block;
                    
-                }
-
+            }
+            p {
+                padding-top: 12px;
                 .action.primary {
-                    width: 128px;
-                    height: 40px;
-                    margin: 0 100px;
-                    padding: 4px 10px;
-                    position: relative;
-                    font-family: "Roboto-Bold";
-                    text-transform: uppercase;
+                        width: 140px;
+                        position: relative;
+                        font-family: "Roboto-Bold";
+                        text-transform: uppercase;
 
-                    &::after {
-                        font-family: "Font Awesome 5 Free";
-                        font-weight: 900;
-                        content    : "\f054";
-                        position   : absolute;
-                        right      : 5%;
-                        top        : 50%;
-                        transform  : translateY(-50%);
-                    }
+                        &::after {
+                            font-family: "Font Awesome 5 Free";
+                            font-weight: 900;
+                            content    : "\f054";
+                            position   : absolute;
+                            right      : 5%;
+                            top        : 50%;
+                            transform  : translateY(-50%);
+                        }
                 }
             }
+        }
+            
         
     }
 }
@@ -227,6 +230,10 @@
     &-left {
         position    : relative;
         margin-right: 20px;
+        width: 100%;
+        img {
+            width: 100%;
+        }
 
         &-contents {
             position  : absolute;
@@ -251,6 +258,12 @@
                 width : 160px;
                 height: 50px;
             }
+        }
+    }
+    &-right {
+        width: 100%;
+        img {
+            width: 100%;
         }
     }
 }
@@ -311,25 +324,17 @@
     }
     
     .slick-banner {
-        flex-wrap: wrap;
-        margin-top: 0px;
+       display: block;
         .slick-banner-1, .slick-banner-2, .slick-banner-3 {
             
-                width           : 100%;
-                margin-right    : 0;
+                max-width: 100%;
     
-                img {
-                    width  : 100%;
-                }
-                .text {
-                    padding: 38px 10px;
-                    margin-top: -5px;
-                }
             
         }
     }
     .two-tiles {
         flex-wrap: wrap;
+        width: 100%;
     
         &-left {
             margin-right: 0;
@@ -337,3 +342,13 @@
         }
     }
 }
+
+// responsive 
+@media only screen and (min-width: 768px) and (max-width: 1230px) {
+
+    .banner-main {
+        .banner-outdoor-contents-title {
+            font-size: 150px;
+        }
+    }
+ }
